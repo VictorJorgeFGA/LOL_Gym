@@ -1,0 +1,2 @@
+class GameUpdate < ApplicationRecord
+end

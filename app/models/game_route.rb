@@ -1,0 +1,2 @@
+class GameRoute < ApplicationRecord
+end

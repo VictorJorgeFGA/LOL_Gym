@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
-  before_action :authenticate_user!, :require_admin_role!, only: [:staff_area]
+  before_action :authenticate_user!, :expel_non_admins, only: [:staff_area]
 
   def news
   end
@@ -25,7 +25,7 @@ class BlogController < ApplicationController
   def staff_area
   end
 
-  private def require_admin_role!
+  private def expel_non_admins
     unless current_user.admin?
       redirect_to root_path
     end

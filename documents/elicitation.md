@@ -1,0 +1,148 @@
+# Elicitation
+
+## Introspection
+The elicitation activity was done by using the [_introspection_](https://pt.slideshare.net/FahadFarooq21/introspection-software-requirement-elicitation-technique#:~:text=INTROSPECTION%20%E2%80%A2%20In%20Introspection%20technique,by%20using%20available%20equipment%20etc.&text=Introspection%20is%20the%20first%20and,have%20in%20order%20to%20succeed.) method. When using the introspection method, the requirements engineer attempts to mentalize the user's thoughts in order to figure out what kind of requirements the software product must carry out.
+
+## Requirements
+In this document, every spotted _requirement_ is described in natural language, in fact, by using natural language sentences. Each sentence describes a unique requirement.
+
+Each one of the 97 spotted requirements falls into one of the 8 categories below. Left-click to redirect to there.
+
+- [User profile](#user-profile)
+- [Admins](#admins)
+- [Punishments](#punishments)
+- [Blog content](#blog-content)
+- [Articles](#articles)
+- [Comments](#comments)
+- [Notifications](#notifications)
+- [Interface](#interface)
+
+### User profile
+| ID  | Requirement |
+| :-: | :------: |
+| 1 | The user can create a personal account on the blog. |
+| 2 | The user can associate their League of Legends account with their blog account. |
+| 3 | The user receives badges on their profile according to their tier on League of Legends. |
+| 4 | The user can choose from which ranked mode they will receive their tier badge (solo/duo, clash, flex, etc.). |
+| 5 | The user has a profile page associated with their account on the blog. |
+| 6 | The user's profile page has an optional field for their biography. |
+| 7 | The user's profile page shows the user's tier badge. |
+| 8 | The user's profile page shows the user's account creation date. |
+| 9 | The user has a followers list. |
+| 10 | The user has a list of users which they follow. |
+| 11 | The user's profile page shows how many followers the user has |
+| 12 | The user's profile page shows how many users the user follows |
+| 13 | The user's profile page shows the articles written by the user |
+| 14 | The user has a unique nickname on the blog |
+| 15 | The user has a profile picture |
+
+### Admins
+| ID  | Requirement |
+| :-: | :------: |
+| 16 | The admin can delete any comment from any user. |
+| 17 | The admin can archive any comment from any user. |
+| 18 | The admin can archive any article from any user. |
+| 19 | The admin can delete any article from any user. |
+| 20 | The admin can register and update a champion. |
+| 21 | The admin can register and update an item. |
+| 22 | The admin can register and update a game update. |
+| 23 | The admin can register and update a game route. |
+| 24 | The admin can register and update a game mode. |
+| 25 | The admin can register and update the blog's policies and rules. |
+| 26 | The admin can check all reports. |
+
+### Punishments
+| ID  | Requirement |
+| :-: | :------: |
+| 27 | The admin can prevent a user from interacting with the blog for a period of time (banishment). |
+| 28 | The admin must associate proof (comment, article, inappropriate profile picture, etc.) with a banishment. |
+| 29 | The user can check their punishment history. |
+| 30 | The admin can suspend a user's account permanently. |
+| 31 | A punishment is associated with a unique admin. |
+| 32 | Only the admin can see who applied a punishment to a user. |
+
+### Blog content
+| ID  | Requirement |
+| :-: | :------: |
+| 33 | The blog has a news section. |
+| 34 |  The blog has a game updates section. |
+| 35 |  The blog has a champions guide section. |
+| 36 |  The blog has a routes guide section. |
+| 37 |  The blog has an items guide section. |
+| 38 |  The blog has a game modes guide section. |
+| 39 |  The blog has a policy and rules section. |
+| 40 |  The blog has a staff section. |
+| 41 |  The staff section has a subsection that shows all reports. |
+| 42 |  The staff section has a subsection that shows all applied punishments. |
+
+### Articles
+| ID  | Requirement |
+| :-: | :------: |
+| 43 | Only the admin can write news articles. |
+| 44 | Only the admin can write game update articles. |
+| 45 | Only the admin can write new champion articles. |
+| 46 | Only the admin can write new item articles. |
+| 47 | Only the admin can write new game route articles. |
+| 48 | Only the admin can write new game mode articles. |
+| 49 | The user can write champion guide articles. |
+| 50 | The user can write route guide articles. |
+| 51 | The user can write game mode guide articles. |
+| 52 | The user can write item guide articles. |
+| 53 | Every guide article shows the latest game update covered. |
+| 54 | Every guide article that doesn't cover an update that affects one of its subjects is tagged as outdated. |
+| 55 | The user can give a "thumbs up" to an article. |
+| 56 | The user's tier badge is shown on their articles. |
+| 57 | The user can add, and remove champion, item, route, and game mode tags on their guide articles.  |
+| 58 | The user can edit their own articles |
+| 59 | The user can delete their own articles. |
+
+
+### Comments
+| ID  | Requirement |
+| :-: | :------: |
+| 60 | The user can add a comment to an article. |
+| 61 | The user can give a thumbs up to a comment |
+| 62 | The user can give a thumbs down to a comment |
+| 63 | The user can reply to a comment |
+| 64 | The user can delete their comment |
+| 65 | The user can report a comment |
+| 66 | The article's author can disable the comments section |
+
+### Notifications
+| ID  | Requirement |
+| :-: | :------: |
+| 67 | The blog has a notifications menu |
+| 68 | The user receives a notification pop-up when a new notification arrives |
+| 69 | The notification alert doesn't cause the user to be annoyed. |
+| 70 | The user gets a notification when someone gives a thumbs up on their article. |
+| 71 | The user gets a notification when someone adds a comment to their article. |
+| 72 | The user gets a notification when someone gives a thumbs up on their comment. |
+| 73 | The user gets a notification when someone replies to their comment |
+| 74 | The user gets a notification when someone starts to follow them. |
+| 75 | The user gets a notification when their guide article is tagged as outdated. |
+| 76 | The user gets a notification when they are punished. |
+| 77 | The user can disable the notifications from their comment. |
+| 78 | The user can disable the notifications from their article. |
+| 79 | The notification has a link to its origin. |
+
+### Interface
+| ID  | Requirement |
+| :-: | :------: |
+| 80 | The interface has a minimalist style. |
+| 81 | The articles' font is pleasant for reading. |
+| 82 | The interface has a text editor. |
+| 83 | The text editor allows section creation inside the article body. |
+| 84 | The text editor allows link insertion inside the article body (links to items, routes, champions, etc.). |
+| 85 | The text editor allows image upload. |
+| 86 | The text editor allows external link insertion. |
+| 87 | The news section displays all the news in non-increasing order of creation. |
+| 88 | The user can search for a new using words that belong to its body or title. |
+| 89 | The user can order the news in increasing order or non-increasing order of creation. |
+| 90 | The user can order the news by the number of comments in increasing or non-increasing order. |
+| 91 | The user can order the news by the number of thumbs up in increasing or non-increasing order. |
+| 92 | The champion guide section shows all articles ordered by the number of thumbs up in non-increasing order. |
+| 93 | The user can search for champion guide articles by searching for the champion name. |
+| 94 | The user can filter guide articles list by the author nickname. |
+| 95 | The user can filter guide articles list by the author tier. |
+| 96 | The user can filter guide articles list by the number of comments |
+| 97 | The user can filter guide articles list by the patch covered. |

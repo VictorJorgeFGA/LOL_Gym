@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #434545;">
+  <div class="container-fluid">
+  
+    <%= link_to "LoL Gym", blog_news_path, class: "navbar-brand" %>
+    
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <%= link_to "News", blog_news_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Game Updates", blog_game_updates_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Champions", blog_champions_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Items", blog_items_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Routes", blog_routes_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Game Modes", blog_game_modes_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Policy", blog_policy_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Staff Area", blog_staff_area_path, class: "nav-link" %>
+        </li>
+    </ul>
+
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search your champion" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

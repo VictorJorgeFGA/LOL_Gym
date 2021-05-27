@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root "blog#news"
 
-  get 'blog/news'
-  get 'blog/game_updates'
-  get 'blog/champions'
-  get 'blog/routes'
-  get 'blog/items'
-  get 'blog/game_modes'
-  get 'blog/policy'
-  get 'blog/staff_area'
+  get "news", to: "blog#news"
+  get "game_updates", to: "blog#game_updates"
+  get "champions", to: "blog#champions"
+  get "routes", to: "blog#routes"
+  get "items", to: "blog#items"
+  get "game_modes", to: "blog#game_modes"
+  get "policy", to: "blog#policy"
+  get "staff_area", to: "blog#staff_area"
+
+  resources :articles, except: :index
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

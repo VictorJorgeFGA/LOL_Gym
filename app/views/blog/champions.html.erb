@@ -1,2 +1,16 @@
-<h1>Blog#champions</h1>
-<p>Find me in app/views/blog/champions.html.erb</p>
+<h1>Champion guides</h1>
+<div class="d-sm mb-2">
+    <form action="<%= new_article_path %>" method="get">
+        <button class="btn btn-primary" name="section" type="submit" value="champion_guide">Create your own guide!</button>
+    </form>
+</div>
+<% Article.where(article_type: :champion_guide).each do |article| %>
+    <div class="card text-center mb-3">
+        <div class="card-body">
+            <h3><%= link_to article.title, article %></h3>
+        </div>
+        <div class="card-footer text-muted">
+            Created at <%= article.created_at.to_formatted_s(:short) %>
+        </div>
+    </div>
+<% end %>

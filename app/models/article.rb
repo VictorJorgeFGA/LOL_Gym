@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+    belongs_to :user
+
     enum article_type: {
         news: 0,
         game_update: 1,
@@ -10,5 +12,5 @@ class Article < ApplicationRecord
     
     validates :title, presence: true
     validates :body, presence: true, length: {minimum: 50}
-    # validates :article_type, presence: true, inclusion: {in: article_type}
+    validates :article_type, presence: true
 end

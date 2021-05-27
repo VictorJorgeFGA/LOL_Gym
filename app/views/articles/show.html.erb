@@ -1,0 +1,4 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<%= link_to "Edit this article", edit_article_path(@article) %>
+<%= button_to "Home", root_path, class: "btn btn-primary", method: "get" %>

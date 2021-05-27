@@ -8,5 +8,7 @@ class Article < ApplicationRecord
         game_mode_guide: 5
     }, _prefix: :article_type
     
-
+    validates :title, presence: true
+    validates :body, presence: true, length: {minimum: 50}
+    # validates :article_type, presence: true, inclusion: {in: article_type}
 end

@@ -1,2 +1,11 @@
-<h1>Blog#news</h1>
-<p>Find me in app/views/blog/news.html.erb</p>
+<h1>News!</h1>
+<% Article.where(article_type: :news).each do |article| %>
+    <div class="card text-center mb-3">
+        <div class="card-body">
+            <h3><%= link_to article.title, article %></h3>
+        </div>
+        <div class="card-footer text-muted">
+            Created at <%= article.created_at.to_formatted_s(:short) %>
+        </div>
+    </div>
+<% end %>

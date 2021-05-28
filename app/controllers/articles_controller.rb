@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
     def new
         @article = current_user.articles.build
         @article.article_type = params[:section]
+
+        unless @article.article_type
+            redirect_to root_path
+        end
     end
 
     def create

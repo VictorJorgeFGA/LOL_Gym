@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
     belongs_to :user
+    has_many :likes, dependent: :destroy
 
     enum article_type: {
         news: 0,
@@ -20,5 +21,9 @@ class Article < ApplicationRecord
         if not user.admin? and (article_type_news? or article_type_game_update?) 
             errors.add(:base, :invalid, message: "You don't have permission to write this type of article!")
         end
+    end
+
+    def number_of_likes
+        return likes.count
     end
 end

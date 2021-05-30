@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "policy", to: "blog#policy"
   get "staff_area", to: "blog#staff_area"
 
-  resources :articles, except: :index
+  resources :articles, except: :index do
+    resources :likes, only: [:create, :destroy]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,20 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 <p>Created by <strong><%= @article.user.email %></strong></p>
+
+<p><%= @article.number_of_likes %> players liked this.</p>
+<div class="d-sm mb-3">
+    <% if user_signed_in? %>
+        <% if current_user.already_liked_article? @article %>
+            <%= button_to "Unlike", article_like_path(@article, @article.likes.find_by(user_id: current_user.id)), class: "btn btn-primary", method: "delete" %>
+        <% else %>
+            <%= button_to "Like", article_likes_path(@article), class: "btn btn-primary" %>
+        <% end %>
+    <% else %>
+        <%= button_to "Like", article_likes_path(@article), class: "btn btn-primary" %>
+    <% end %>
+</div>
+
 <% if user_can_modify_this_article? current_user, @article %>
     <%= link_to "Edit this article", edit_article_path(@article) %><br>
     <%= link_to "Delete this article", article_path(@article), method: "delete" %>

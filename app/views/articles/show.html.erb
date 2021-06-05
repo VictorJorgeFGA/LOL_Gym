@@ -2,7 +2,7 @@
 <p><%= @article.body %></p>
 <p>Created by <strong><%= @article.user.email %></strong></p>
 
-<p><%= @article.number_of_likes %> players liked this.</p>
+<p><%= @article.number_of_likes %> players like this article.</p>
 <div class="d-sm mb-3">
     <% if user_signed_in? %>
         <% if current_user.already_liked_article? @article %>
@@ -15,8 +15,34 @@
     <% end %>
 </div>
 
-<% if user_can_modify_this_article? current_user, @article %>
-    <%= link_to "Edit this article", edit_article_path(@article) %><br>
-    <%= link_to "Delete this article", article_path(@article), method: "delete" %>
+<div class="d-fluid mb-3">
+    <% if user_can_modify_this_article? current_user, @article %>
+        <%= link_to "Edit this article", edit_article_path(@article) %><br>
+        <%= link_to "Delete this article", article_path(@article), method: "delete" %>
+
+        <% new_comments_section_state = if @article.allows_comments? then "disable" else "enable" end %>
+        <%= button_to new_comments_section_state.capitalize() + " comments section", comments_section_article_path(@article.id, new_comments_section_state), class: "btn btn-primary", method: "patch" %>
+    
+    <% end %>
+    <%= button_to "Home", root_path, class: "btn btn-primary", method: "get" %>
+</div>
+
+<% if @article.allows_comments? %>
+    <% if user_signed_in? %>
+        <div class="d-sm mb-2">
+            <% new_comment = Comment.new(article_id = @article_id) %>
+            <%= render 'comments/comment_form', article: @article, comment: new_comment %>
+        </div>
+    <% end %>
+
+    <div class="d-sm">
+        <% if @article.comments.count == 0 %>
+            <h2>Seems like there aren't comments here yet.</h2>
+        <% elsif %>
+            <h2>Comments (<%= @article.comments.count %>):</h2>
+            <%= render @article.comments %>
+        <% end %>
+    </div>
+<% else %>
+    <h2>Comments are disabled for this article.</h2>
 <% end %>
-<%= button_to "Home", root_path, class: "btn btn-primary", method: "get" %>

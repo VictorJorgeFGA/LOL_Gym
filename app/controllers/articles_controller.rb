@@ -41,6 +41,13 @@ class ArticlesController < ApplicationController
         redirect_to root_path
     end
 
+    def comments_section
+        @article = Article.find(params[:id])
+        @article.update_attribute(:allows_comments, params[:state] == "enable")
+
+        redirect_to @article
+    end
+
     private
     def article_params
         params.require(:article).permit(:title, :body, :article_type)

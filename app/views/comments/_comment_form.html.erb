@@ -1,0 +1,13 @@
+<h2> Write a comment! </h2>
+<div class="mb-5">
+    <%= form_with model: [article, comment] do |form| %>
+        <div class="mb-3">
+            <%= form.label :content %>
+            <%= form.text_area :content, placeholder: "Awesome guide!", class: "form-control", value: comment.content %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.submit "Post comment", class: "btn btn-primary" %>
+        </div>
+    <% end %>
+</div>

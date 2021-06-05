@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'user/sessions',
+    registrations: 'user/registrations'
+  }
   root "blog#news"
 
   get "news", to: "blog#news"
@@ -13,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :articles, except: :index do
     resources :likes, only: [:create, :destroy]
+    
+    resources :comments, only: [:create, :destroy]
+    patch 'comments_section/:state', on: :member, to: "articles#comments_section", as: 'comments_section'
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

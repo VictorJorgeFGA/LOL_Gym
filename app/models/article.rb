@@ -16,9 +16,9 @@ class Article < ApplicationRecord
     validates :title, presence: true
     validates :body, presence: true, length: {minimum: 50}
     validates :article_type, presence: true
-    validate :author_has_privileges_to_write_this_type_of_article
+    validate :user_can_write_this_type_of_article
 
-    def author_has_privileges_to_write_this_type_of_article
+    def user_can_write_this_type_of_article
         if not user.admin? and (article_type_news? or article_type_game_update?) 
             errors.add(:base, :invalid, message: "You don't have permission to write this type of article!")
         end

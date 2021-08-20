@@ -21,7 +21,7 @@
         <%= link_to "Delete this article", article_path(@article), method: "delete" %>
 
         <% new_comments_section_state = if @article.allows_comments? then "disable" else "enable" end %>
-        <%= button_to new_comments_section_state.capitalize() + " comments section", comments_section_article_path(@article.id, new_comments_section_state), class: "btn btn-primary", method: "patch" %>
+        <%= button_to new_comments_section_state.capitalize() + " comments section", article_comments_section_path(@article.id, new_comments_section_state), class: "btn btn-primary", method: "patch" %>
     
     <% end %>
     <%= button_to "Home", root_path, class: "btn btn-primary", method: "get" %>

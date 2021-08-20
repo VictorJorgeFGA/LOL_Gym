@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     
     resources :comments, only: [:create, :destroy]
-    patch 'comments_section/:state', on: :member, to: "articles#comments_section", as: 'comments_section'
+    patch 'comments_section/:state', to: "articles#comments_section", as: 'comments_section'
   end
 end

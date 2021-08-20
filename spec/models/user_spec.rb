@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
+
   describe "#admin?" do
     before do
       @user = User.create({email: 'user1@rails.com', password: 'usermaster982563', nickname: 'user1', admin: false})
     end
-  
+
     it "when they're not admin" do
       @user.admin = false
       expect(@user.admin?).to be false
@@ -71,5 +71,21 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe "already_liked_article?" do
+    before do
+      @user = User.create({email: 'admin@example.com', password: 'Teste123', nickname: 'admin', admin: true})
+      @user.save
+      @article = @user.articles.create(title: "A great example of...", body: "First of all, we need to think about how to keep your enemies...", article_type: "news")
+      @article.save
+    end
 
+    it "when didn't liked the article" do
+      expect(@user.already_liked_article? @article).to be_falsey
+    end
+
+    it "when liked the article" do
+      @article.likes.create(user_id: @user.id, is_positive: true)
+      expect(@user.already_liked_article? @article).to be_truthy
+    end
+  end
 end

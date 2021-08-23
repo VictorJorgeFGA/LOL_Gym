@@ -2,4 +2,5 @@ one:
   title: My Fabulous Article One
   body: This is my fabulous article one. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
   allows_comments: true
+  article_type: :champion_guide
   user: guest_one

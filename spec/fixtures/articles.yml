@@ -4,3 +4,52 @@ one:
   allows_comments: true
   article_type: :champion_guide
   user: guest_one
+
+news:
+  title: My Fabulous Article News
+  body: This is my fabulous article news. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :news
+  user: admin
+
+news:
+  title: My Fabulous Article Game Update
+  body: This is my fabulous article game update. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :game_update
+  user: admin
+
+champion_guide:
+  title: My Fabulous Article Champion Guide
+  body: This is my fabulous article champion guide. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :champion_guide
+  user: admin
+
+item_guide:
+  title: My Fabulous Article item Guide
+  body: This is my fabulous article item guide. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :item_guide
+  user: admin
+
+game_route_guide:
+  title: My Fabulous Article game_route Guide
+  body: This is my fabulous article game_route guide. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :game_route_guide
+  user: admin
+
+game_mode_guide:
+  title: My Fabulous Article game_mode Guide
+  body: This is my fabulous article game_mode guide. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :game_mode_guide
+  user: admin
+
+blog_policy:
+  title: My Fabulous Article Blog Policy
+  body: This is my fabulous article Blog Policy. Every time you see it, you'll get amazed with no reason. That's strange, isn't it?
+  allows_comments: true
+  article_type: :blog_policy
+  user: admin

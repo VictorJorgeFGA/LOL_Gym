@@ -12,19 +12,23 @@ class Article < ApplicationRecord
         game_mode_guide: 5,
         blog_policy: 6
     }, _prefix: :article_type
-    
+
     validates :title, presence: true
     validates :body, presence: true, length: {minimum: 50}
     validates :article_type, presence: true
     validate :user_can_write_this_type_of_article
 
     def user_can_write_this_type_of_article
-        if not user.admin? and (article_type_news? or article_type_game_update?) 
+        if !user.admin? && (article_type_news? || article_type_game_update? || article_type_blog_policy?)
             errors.add(:base, :invalid, message: "You don't have permission to write this type of article!")
         end
     end
 
     def number_of_likes
-        return likes.count
+        likes.where(is_positive: true).count
+    end
+
+    def number_of_dislikes
+        likes.where(is_positive: false).count
     end
 end

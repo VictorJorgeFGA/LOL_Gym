@@ -72,11 +72,11 @@ RSpec.describe User, type: :model do
     end
   end
   describe "already_liked_article?" do
+    fixtures :users, :articles
+
     before do
-      @user = User.create({email: 'admin@example.com', password: 'Teste123', nickname: 'admin', admin: true})
-      @user.save
-      @article = @user.articles.create(title: "A great example of...", body: "First of all, we need to think about how to keep your enemies...", article_type: "news")
-      @article.save
+      @user = users(:admin)
+      @article = articles(:one)
     end
 
     it "when didn't liked the article" do

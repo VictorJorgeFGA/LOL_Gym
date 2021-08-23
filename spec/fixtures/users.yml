@@ -1,0 +1,9 @@
+admin:
+  email: admin@example.com
+  admin: true
+  nickname: admin
+
+guest_one:
+  email: guest_one@example.com
+  admin: false
+  nickname: guest_one

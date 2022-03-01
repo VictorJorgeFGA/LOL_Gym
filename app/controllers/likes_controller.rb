@@ -3,8 +3,8 @@ class LikesController < ApplicationController
     before_action :find_article
 
     def create
-        if not current_user.already_liked_article? @article
-            @article.likes.create({user_id: current_user.id})
+        if !current_user.already_liked_article?(@article)
+            @article.likes.create({user_id: current_user.id, is_positive: true})
         end
         redirect_to @article
     end

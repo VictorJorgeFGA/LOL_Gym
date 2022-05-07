@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_144238) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false, null: false
     t.string "nickname"
-    t.string "summoner_id", null: false
+    t.string "summoner_id"
     t.string "summoner_name"
     t.string "queue_type"
     t.string "tier"

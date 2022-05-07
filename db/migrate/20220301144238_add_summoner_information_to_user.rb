@@ -1,6 +1,6 @@
 class AddSummonerInformationToUser < ActiveRecord::Migration[6.1]
   def change
-    add_column :users, :summoner_id, :string, null: false
+    add_column :users, :summoner_id, :string
     add_column :users, :summoner_name, :string
     add_column :users, :queue_type, :string
     add_column :users, :tier, :string

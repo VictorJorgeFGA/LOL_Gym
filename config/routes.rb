@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'user/sessions',
-    registrations: 'user/registrations'
+    registrations: 'user/registrations',
+    omniauth_callbacks: 'user/omniauth_callbacks'
   }
   root "blog#news"
 
@@ -16,8 +17,11 @@ Rails.application.routes.draw do
 
   resources :articles, except: :index do
     resources :likes, only: [:create, :destroy]
-    
+
     resources :comments, only: [:create, :destroy]
     patch 'comments_section/:state', to: "articles#comments_section", as: 'comments_section'
   end
+
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+  # get 'auth/:provider/callback' => 'omniauth_callbacks#google_oauth2_callback'
 end

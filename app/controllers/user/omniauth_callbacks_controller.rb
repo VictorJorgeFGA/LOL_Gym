@@ -12,9 +12,18 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # https://github.com/heartcombo/devise#omniauth
 
   # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
+  def passthru
+    super
+  end
+
+  def google_oauth2
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+
+    if @user.persisted?
+      flash[:notice] = "Yay!"
+      sign_in_and_redirect @user, event: :authentication
+    end
+  end
 
   # GET|POST /users/auth/twitter/callback
   # def failure

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     registrations: 'user/registrations',
     omniauth_callbacks: 'user/omniauth_callbacks'
   }
-  root "blog#news"
+
+  get '/', to: redirect('/news')
+  root to: 'blog#news'
 
   get "news", to: "blog#news"
   get "game_updates", to: "blog#game_updates"

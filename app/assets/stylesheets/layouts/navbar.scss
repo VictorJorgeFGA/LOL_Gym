@@ -1,0 +1,62 @@
+$gray-font-color: #BCA6CA;
+$hover-gray-font-color: #d1bfdb;
+
+$selected-nav-link-bg: #ff7b7b;
+$hover-selected-nav-link-bg: #FF9393;
+
+$selected-nav-link-color: #2B1535;
+$hover-selected-nav-link-color: #1a0a22;
+
+$nl-transition-time: 0.38s;
+
+.navbar {
+    background-color: rgba(28,0,41,.55);
+    color: $gray-font-color;
+    font-size: 1.25rem;
+    place-items: center end;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    padding: 0;
+    max-width: 100vw;
+    border-bottom: solid $selected-nav-link-color .15rem;
+}
+
+.nav-item {
+    display: inline-block;
+    margin: 0.3em 0.2em 0.3em 0.2em;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $gray-font-color;
+    border-radius: .5em;
+    padding: .35em 1.5em .35em 1.5em;
+    transition: $nl-transition-time;
+}
+
+.nav-link:hover {
+    color: $hover-gray-font-color;
+}
+
+.selected-nav-link {
+    background-color: $selected-nav-link-bg;
+    color: $selected-nav-link-color;
+    font-weight: lighter;
+    transition: $nl-transition-time;
+}
+
+.selected-nav-link:hover {
+    background-color: $hover-selected-nav-link-bg;
+    color: $hover-selected-nav-link-color;
+}
+
+.brand-icon {
+    margin-left: 1.5rem;
+    max-width: 5rem;
+    max-height: 5rem;
+}

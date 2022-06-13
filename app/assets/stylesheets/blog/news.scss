@@ -1,0 +1,30 @@
+$gray-font-color: #BCA6CA;
+
+#lol-gym-banner {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#garen-banner{
+    width: 60vw;
+}
+
+#join-us {
+    justify-content: flex-start;
+    flex-direction: column;
+    color: $gray-font-color;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+}
+
+#join-us-text {
+    max-width: 25em;
+    margin-bottom: 3em;
+    >h1 {
+        margin-bottom: 2em;
+    }
+}
+
+#join-us-button {
+    font-size: 2em;
+}

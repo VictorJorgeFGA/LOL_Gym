@@ -1,4 +1,24 @@
-<h1>News!</h1>
+<title>LoL Gym - News</title>
+
+<% unless user_signed_in? %>
+<div id="lol-gym-banner" class="flex">
+    <div class="flex flex-item" id="join-us">
+        <div id="join-us-text">
+            <h1>Let's improve yourself!</h1>
+            <p>Are you tired of failing to get to a higher elo?</p>
+            <p>Fufill your full potential by learning the most advanced techniques with real good players</p>
+        </div>
+        <div>
+            <%= button_to "Join Us!", new_user_registration_path, class: 'button light-button', method: 'get', id: 'join-us-button' %>
+        </div>
+    </div>
+    <div>
+        <img class="flex-item" id="garen-banner" src="https://www.pixel4k.com/wp-content/uploads/2019/11/garen-lol-splash-art-league-of-legends-lol_1574102108.jpg" alt="https://via.placeholder.com/150">
+    </div>
+</div>
+<% end %>
+
+
 <% Article.where(article_type: :news).each do |article| %>
     <div class="card text-center mb-3">
         <div class="card-body">

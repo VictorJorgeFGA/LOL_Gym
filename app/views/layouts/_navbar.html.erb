@@ -1,59 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #434545;">
-  <div class="container-fluid">
-  
-    <%= link_to "LoL Gym", news_path, class: "navbar-brand" %>
-    
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="navbar">
+    <%= link_to image_tag("logo.png", class: "brand-icon", alt: "LoL Gym Logo"), root_path, class: "brand-icon" %>
+    <ul class="nav-list">
         <li class="nav-item">
-            <%= link_to "News", news_path, class: "nav-link" %>
+            <%= link_to "News", news_path, class: "nav-link #{"selected-nav-link" if current_page?(news_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Game Updates", game_updates_path, class: "nav-link" %>
+            <%= link_to "Champions", champions_path, class: "nav-link #{"selected-nav-link" if current_page?(champions_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Champions", champions_path, class: "nav-link" %>
+            <%= link_to "Items", items_path, class: "nav-link #{"selected-nav-link" if current_page?(items_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Items", items_path, class: "nav-link" %>
+            <%= link_to "Routes", routes_path, class: "nav-link #{"selected-nav-link" if current_page?(routes_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Routes", routes_path, class: "nav-link" %>
+            <%= link_to "Game Modes", game_modes_path, class: "nav-link #{"selected-nav-link" if current_page?(game_modes_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Game Modes", game_modes_path, class: "nav-link" %>
+            <%= link_to "Game Updates", game_updates_path, class: "nav-link #{"selected-nav-link" if current_page?(game_updates_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Policy", policy_path, class: "nav-link" %>
+            <%= link_to "Policy", policy_path, class: "nav-link #{"selected-nav-link" if current_page?(policy_path)}" %>
         </li>
-        <% if user_signed_in? and current_user.admin? %>
+        <% if current_user.try(:admin?) %>
             <li class="nav-item">
-                <%= link_to "Staff Area", staff_area_path, class: "nav-link" %>
+                <%= link_to "Staff Area", staff_area_path, class: "nav-link #{"selected-nav-link" if current_page?(staff_area_path)}" %>
             </li>
         <% end %>
-    </ul>
-
-    <ul class="navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
             <li class="nav-item">
-                <%= link_to current_user.email, "", class: "nav-link disabled" %>
+                <%= link_to current_user.nickname, root_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, method: "delete", class: "nav-link" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
             </li>
         <% else %>
             <li class="nav-item">
-                <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+                <%= link_to "Sign In", new_user_session_path, class: "nav-link #{"selected-nav-link" if current_page?(new_user_session_path)}" %>
             </li>
             <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link #{"selected-nav-link" if current_page?(new_user_registration_path)}" %>
             </li>
         <% end %>
     </ul>
-
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search your champion" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-    </form>
-
-  </div>
 </nav>

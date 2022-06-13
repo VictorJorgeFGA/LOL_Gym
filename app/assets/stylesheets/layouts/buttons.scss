@@ -1,0 +1,44 @@
+:root{
+    --dark-button-background-color: rgba(80, 0, 155, 0.137);
+    --dark-button-text-color: #FD6D6D;
+    --dark-button-border-color: #DF5B5B;
+
+    --light-button-background-color: #ff7b7b;
+    --light-button-text-color: #1a0a22;
+}
+
+.button {
+    font-family: 'Inria Sans', sans-serif;
+    border-radius: .55em;
+    font-size: 1.5em;
+    padding: .5em 1.5em;
+    cursor: pointer;
+    font-weight: 700;
+    border-width: .2em;
+    border-style: solid;
+    box-shadow: var(--dark-element-shadow);
+}
+
+.dark-button {
+    background-color: var(--dark-button-background-color);
+    color: var(--dark-button-text-color);
+    border-color: var(--dark-button-border-color);
+    transition: 200ms;
+    &:hover {
+        background-color: var(--light-button-background-color);
+        color: var(--light-button-text-color);
+        border-color: var(--light-button-background-color);
+    }
+}
+
+.light-button {
+    background-color: var(--light-button-background-color);
+    color: var(--light-button-text-color);
+    border-color: var(--light-button-background-color);
+    transition: 200ms;
+    &:hover {
+        background-color: var(--dark-button-background-color);
+        color: var(--dark-button-text-color);
+        border-color: var(--dark-button-border-color);
+    }
+}

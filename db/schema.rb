@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_03_01_144238) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_144238) do
     t.integer "article_type", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -30,8 +33,8 @@ ActiveRecord::Schema.define(version: 2022_03_01_144238) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "article_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -65,8 +68,8 @@ ActiveRecord::Schema.define(version: 2022_03_01_144238) do
 
   create_table "likes", force: :cascade do |t|
     t.string "likeable_type"
-    t.integer "likeable_id"
-    t.integer "user_id", null: false
+    t.bigint "likeable_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_positive", null: false
